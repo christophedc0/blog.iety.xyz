@@ -25,10 +25,7 @@ h1 {
   font-size: 20px;
   border-bottom: 1px solid #cccccc;
   padding: .5em 0;
-  margin: 2em 0 1em;
-  color: #ffcc00;
-  font-weight: 400;
-  text-decoration:none
+  margin: 2em 0 1em
 }
 
 h1:first-child {
