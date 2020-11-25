@@ -13,7 +13,8 @@ body {
   background-color: #fff;
   color: #393939;
   margin: 0px;
-  margin-left:20px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 0px;
   height: 100%;
 }
@@ -548,7 +549,7 @@ p code {
      Pre/Code Styles
 ------------------------------------------------------------------------------*/
 
-code {white-space: nowrap;}
+code {white-space: wrap;}
 
 pre {
   border: 1px solid #cacaca;
