@@ -549,7 +549,7 @@ p code {
      Pre/Code Styles
 ------------------------------------------------------------------------------*/
 
-code {white-space: wrap;}
+code {white-space: pre;}
 
 pre {
   border: 1px solid #cacaca;
