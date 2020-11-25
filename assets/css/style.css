@@ -48,9 +48,10 @@ a {
     text-decoration:none
 }
 
-code {
-    font-size:12px;
+pre, code {
+    font-size:7px;
+    color: #f0e2d5;
     margin-left: 175px;
-    background: #292929
+    background: #404040
 }
     
