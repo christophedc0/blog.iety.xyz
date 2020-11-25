@@ -63,8 +63,9 @@ h6 {
 }
 
 a {
-  color: #4183C4;
-  text-decoration: none;
+    color: #ffcc00;
+    font-weight: 400;
+    text-decoration:none
 }
 
 a:hover,
