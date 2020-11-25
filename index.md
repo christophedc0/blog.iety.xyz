@@ -1,17 +1,16 @@
 <html>
-  <link rel="stylesheet" href="/assets/css/style.css?v=d393f205f426ac266a3e6034215b600225fbeb93">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </html>
 
-# Hello
+# Hello ?
 
-## heading 2
-
+## who this??
 
 who are you? I DON'T KNOW.
 
 
 ```
-`echo "hello"`
+echo "hello"
 ```
 
 `print 'ok'`
