@@ -9,8 +9,8 @@ html {
 body {
   font: 13px helvetica,arial,freesans,clean,sans-serif;
   line-height: 1.4em;
-  background-color: #252525;
-  color: #393939;
+  background-color: #00F4B;
+  color: #B2B5B6;
   padding: 0px;
   height: 100%;
 /*   margin: 0;
@@ -63,7 +63,7 @@ h6 {
 }
 
 a {
-    color: #ffcc00;
+    color: #94FFB5;
     font-weight: 400;
     text-decoration:none
 }
@@ -73,7 +73,7 @@ a:visited,
 a:hover,
 a:active {
   text-decoration:underline;
-  color: #ffcc00;
+  color: #94FFB5;
   font-weight: 400
 }
 
