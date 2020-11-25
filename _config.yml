@@ -1,3 +1,7 @@
 markdown: kramdown
 title: blog.iety.xyz
 description: No comment.
+theme: jekyll-theme-midnight
+show_downloads: false
+show_view: false
+show_views: false
