@@ -26,6 +26,9 @@ h1 {
   border-bottom: 1px solid #cccccc;
   padding: .5em 0;
   margin: 2em 0 1em;
+  color: #ffcc00;
+  font-weight: 400;
+  text-decoration:none
 }
 
 h1:first-child {
@@ -329,7 +332,7 @@ div.sidebar-module ul ul li span {
   margin: 45px 0 0 0;
 }
 
-#footer a:hover {
+#footer hover {
   text-decoration: underline;
 }
 
