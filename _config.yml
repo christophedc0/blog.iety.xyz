@@ -2,4 +2,4 @@ theme: jekyll-theme-hacker
 markdown: kramdown
 title: blog.iety.xyz
 description: No comment.
-show_downloads: false
+show_downloads: true
