@@ -3,14 +3,13 @@
 ------------------------------------------------------------------------------*/
 
 html {
-  background-color: #00F4B;
   height:100%
 }
 
 body {
   font: 13px helvetica,arial,freesans,clean,sans-serif;
   line-height: 1.4em;
-  background-color: #00F4B;
+  background-color: #000F4B;
   color: #B2B5B6;
   padding: 0px;
   height: 100%;
