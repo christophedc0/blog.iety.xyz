@@ -28,7 +28,8 @@ html, button, input, select, textarea {
 }
 
 body {
-    margin:0
+    margin:0;
+    text-align: center
 }
 
 a:focus {
@@ -635,7 +636,8 @@ section #title {
     border: 0;
     outline: none;
     margin: 0 0 50px 0;
-    padding:0 0 5px 0
+    padding:0 0 5px 0;
+    text-indent: 150px
 }
 
 section #title h1 {
