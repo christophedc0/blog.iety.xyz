@@ -26,7 +26,8 @@ h1 {
   font-size: 20px;
   border-bottom: 1px solid #cccccc;
   padding: .5em 0;
-  margin: 2em 0 1em
+  margin: 2em 0 1em;
+  color: #F94B4B
 }
 
 h1:first-child {
@@ -35,22 +36,21 @@ h1:first-child {
 
 h2 {
   font-size: 16px;
-  color: #333;
+  color: #F496A4;
   margin: 2em auto 1em;
 }
 
   body.api .content h2 {
-    background: transparent url(../images/crud-sprite.png) left 2px no-repeat;
     padding-left: 22px;
   }
 
 h2 span.step {
-  color: #666;
+  color: #F496A4;
 }
 
 h3 {
   font-size: 14px;
-  color: #333;
+  color: #FFCEB3;
   margin: 1.5em 0 .5em;
 }
 
