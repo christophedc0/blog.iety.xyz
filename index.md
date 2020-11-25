@@ -14,4 +14,4 @@ who are you? I DON'T KNOW.
 `echo "hello"`
 ```
 
-`print 'ok'
+`print 'ok'`
