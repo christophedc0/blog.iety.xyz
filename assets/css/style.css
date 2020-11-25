@@ -9,11 +9,12 @@ html {
 body {
   font: 13px helvetica,arial,freesans,clean,sans-serif;
   line-height: 1.4em;
-  background-color: #fff;
+  background-color: #252525;
   color: #393939;
   margin: 0px;
   padding: 0px;
   height: 100%;
+  margin-left: 50px;
 }
 
 p {
