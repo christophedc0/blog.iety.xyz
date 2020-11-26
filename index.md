@@ -16,6 +16,6 @@
 	}
 </style>
 <article class="markdown-body">
-	<h1>Unicorns</h1>
-	<p>All the things</p>
+	# Unicorns
+	All the things
 </article>
