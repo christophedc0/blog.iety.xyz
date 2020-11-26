@@ -50,7 +50,7 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Image
 
-![alt text](image.jpg)
+![alt text](https://www.novinite.com/media/images/2013-10/photo_verybig_154277.jpg)
 
 ## Extended Syntax
 
