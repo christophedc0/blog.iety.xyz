@@ -1,3 +1,11 @@
 markdown: kramdown
 title: blog.iety.xyz
 description: No comment.
+include:
+  - index.md
+  - ansible.md
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
