@@ -1,5 +1,5 @@
 markdown: kramdown
-#title: pages.iety.xyz
+title: pages.iety.xyz
 description: No comment.
 include:
   - index.md
