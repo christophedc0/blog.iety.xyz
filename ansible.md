@@ -32,7 +32,7 @@ inventory = /etc/ansible/hosts
 interpreter_python = python3
 # Gather facts of the clients
 gathering = implicit
-# Gather facts from other packages for example: `facter`
+# Gather facts from other packages for example: "facter"
 gather_subset = all
 # Disable host key checking (or the host key must already be known on the server
 host_key_checking = False
@@ -51,8 +51,11 @@ transfer_method = smart
 retries = 3
 ```
 
-## YAML Config for playbooks
+## Playbook syntax
 
 1. Start with `---`
-2. Define hosts with `- hosts: <name>`
-3. 
+2. Jinja variables should be between '"{{  }}"' 
+
+    example: notify: "{{ foo.msg }}"
+3. Define hosts with `- hosts: <name>`
+4. 
