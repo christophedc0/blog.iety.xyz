@@ -82,7 +82,7 @@ a:active {
 
 blockquote {
 /*  background: #f9f9f9; */
-  background: #C8C8C8;
+  background: #3D3B3F;
   color: #DC965A;
   text-decoration: bold;
   border-left: 10px solid #ccc;
@@ -547,7 +547,7 @@ p code {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #ccc;
-  background-color: #C8C8C8;
+  background-color: #3D3B3F;
   padding: 0px 3px;
   display: inline-block;
 }
@@ -583,7 +583,7 @@ pre {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background-color: #B3B3B3;
+  background-color: #3D3B3F;
   color: #DC965A;
   margin: 0px;
 }
