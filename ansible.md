@@ -56,6 +56,6 @@ retries = 3
 1. Start with `---`
 2. Jinja variables should be between `"{{  }}"`
 
-    example: `notify: "{{ foo.msg }}"
+    example: `notify: "{{ foo.msg }}"`
 3. Define hosts with `- hosts: <name>`
 4. 
