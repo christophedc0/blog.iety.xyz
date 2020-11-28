@@ -83,6 +83,7 @@ a:active {
 blockquote {
 /*  background: #f9f9f9; */
   background: #C8C8C8;
+  color: #DC965A;
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
@@ -92,7 +93,7 @@ blockquote {
 blockquote p {
     display: inline;
 /*    color: #ccc; */
-    color: #B3B3B3;
+    color: #DC965A;
     content: open-quote;
     /* font-size: 4em; */
     /* line-height: 0.1em; */
