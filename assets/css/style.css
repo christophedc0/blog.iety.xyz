@@ -10,8 +10,9 @@ body {
   display: block;
   font: 13px helvetica,arial,freesans,clean,sans-serif;
   line-height: 1.4em;
-  background-color: #fff;
-  color: #393939;
+/*  background-color: #fff; */
+  background: #242325
+  color: #B3B3B3;
   margin: 0px;
   margin-left: 60px;
   margin-right: 20px;
@@ -65,7 +66,8 @@ h6 {
 }
 
 a {
-  color: #F94B4B;
+/*  color: #F94B4B; */
+  color: #DC965A;
   text-decoration: none;
 }
 
@@ -74,11 +76,13 @@ a:visited,
 a:hover,
 a:active {
   text-decoration:underline;
-  color: #F94B4B;
+/*  color: #F94B4B; */
+  color: #DC965A;
 }
 
 blockquote {
-  background: #f9f9f9;
+/*  background: #f9f9f9; */
+  background: #C8C8C8;
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
@@ -87,7 +91,8 @@ blockquote {
 
 blockquote p {
     display: inline;
-    color: #ccc;
+/*    color: #ccc; */
+    color: #B3B3B3;
     content: open-quote;
     /* font-size: 4em; */
     /* line-height: 0.1em; */
