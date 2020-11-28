@@ -43,9 +43,9 @@ fact_caching_connection=/etc/ansible/facts
 
 [ssh_connection]
 # Use sftp and then try scp for transferring files (default: smart; true (scp only); false (sftp only))
-## Old way
+## Old method
 scp_if_ssh = smart
-## New
+## New method
 transfer_method = smart
 # Number of times to retry if the client is unreachable
 retries = 3
@@ -54,7 +54,7 @@ retries = 3
 ## Playbook syntax
 
 1. Start with `---`
-2. Jinja variables should be between '"{{  }}"' 
+2. Jinja variables should be between `"{{  }}"`
 
     example: notify: "{{ foo.msg }}"
 3. Define hosts with `- hosts: <name>`
