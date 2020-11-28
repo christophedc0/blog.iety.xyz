@@ -1,4 +1,4 @@
-# Ansible 2.9.9
+# Ansible 2.9.9 [DRAFT]
 
 ## Notes
 - Ansible is only required on the server side, there's no need to install a specific ansible package on a client (host) to get this working.
@@ -48,6 +48,7 @@ scp_if_ssh = smart
 transfer_method = smart
 # Number of times to retry if the client is unreachable
 retries = 3
+```
 
 ## YML Config
 
