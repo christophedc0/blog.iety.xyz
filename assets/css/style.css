@@ -10,11 +10,10 @@ body {
   display: block;
   font: 13px helvetica,arial,freesans,clean,sans-serif;
   line-height: 1.4em;
-/*  background-color: #fff; */
-  background: #242325;
-  color: #B3B3B3;
+  background-color: #fff;
+  color: #393939;
   margin: 0px;
-  margin-left: 60px;
+  margin-left: 40px;
   margin-right: 20px;
   padding: 0px;
   height: 100%;
@@ -37,7 +36,7 @@ h1:first-child {
 
 h2 {
   font-size: 16px;
-  color: #BBB891;
+  color: #333;
   margin: 2em auto 1em;
 }
 
@@ -47,12 +46,12 @@ h2 {
   }
 
 h2 span.step {
-  color: #BBB891;
+  color: #666;
 }
 
 h3 {
   font-size: 14px;
-  color: #BBB891;
+  color: #333;
   margin: 1.5em 0 .5em;
 }
 
@@ -62,12 +61,11 @@ h5 {
 
 h6 {
   font-size: 13px;
-  color: #BBB891;
+  color: #666;
 }
 
 a {
-/*  color: #F94B4B; */
-  color: #DC965A;
+  color: #F94B4B;
   text-decoration: none;
 }
 
@@ -76,15 +74,11 @@ a:visited,
 a:hover,
 a:active {
   text-decoration:underline;
-/*  color: #F94B4B; */
-  color: #DC965A;
+  color: #F94B4B;
 }
 
 blockquote {
-/*  background: #f9f9f9; */
-  background: #3D3B3F;
-  color: #DC965A;
-  text-decoration: bold;
+  background: #f9f9f9;
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
@@ -93,10 +87,7 @@ blockquote {
 
 blockquote p {
     display: inline;
-/*    color: #ccc; */
-    color: #DC965A;
-    background: #3D3B3F;
-    text-decoration: bold;
+    color: #ccc;
     content: open-quote;
     /* font-size: 4em; */
     /* line-height: 0.1em; */
@@ -540,7 +531,7 @@ div.sidebar-module ul ul li span {
 .content ul code,
 p code {
   font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-  color: #DC965A;
+  color: #52595d;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -548,7 +539,7 @@ p code {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #ccc;
-  background-color: #3D3B3F;
+  background-color: #f9f9f9;
   padding: 0px 3px;
   display: inline-block;
 }
@@ -584,8 +575,8 @@ pre {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background-color: #3D3B3F;
-  color: #DC965A;
+  background-color: #FAFAFB;
+  color: #393939;
   margin: 0px;
 }
 
@@ -636,7 +627,7 @@ pre.highlight {
 }
 
 pre.terminal {
-  background-color: #3D3B3F;
+  background-color: #444;
   color: #fff;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
