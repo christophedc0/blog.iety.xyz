@@ -537,7 +537,7 @@ div.sidebar-module ul ul li span {
 .content ul code,
 p code {
   font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-  color: #52595d;
+  color: #DC965A;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -545,7 +545,7 @@ p code {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  background-color: #C8C8C8;
   padding: 0px 3px;
   display: inline-block;
 }
