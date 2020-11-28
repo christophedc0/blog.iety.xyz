@@ -4,6 +4,7 @@ description: No comment.
 include:
   - index.md
   - ansible.md
+  - markdown.md
 plugins:
   - jekyll-relative-links
 relative_links:
