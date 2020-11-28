@@ -95,6 +95,7 @@ blockquote p {
     display: inline;
 /*    color: #ccc; */
     color: #DC965A;
+    background: #3D3B3F;
     text-decoration: bold;
     content: open-quote;
     /* font-size: 4em; */
