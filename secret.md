@@ -1,8 +1,5 @@
-<center>
- 
- # Menu
+# Menu
 - - - -
+
   * [Markdown](markdown.md)
   * [Ansible](ansible.md)
-
-</center>
