@@ -4,13 +4,13 @@
 - Ansible is only required on the server side, there's no need to install a specific ansible package on a client (host) to get this working.
 
 ## Main settings
+
 ### Install facter on clients (you could do this when Ansible is already set up, with a playbook)
 ```
 sudo apt update
 sudo apt install -y facter
 ```
 
-sudo apt install -y facter
 ### Set up Ansible (server) on the Ubuntu > 20.04
 
 Run the following:
@@ -22,6 +22,7 @@ sudo apt install -y ansible
 ```
 
 ### My Ansible.cfg
+
 My settings:
 ```
 [defaults]
@@ -50,7 +51,8 @@ transfer_method = smart
 retries = 3
 ```
 
-## YML Config
+## YAML Config for playbooks
 
 1. Start with `---`
 2. Define hosts with `- hosts: <name>`
+3. 
