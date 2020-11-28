@@ -8,11 +8,12 @@
 ```
 sudo apt update
 sudo apt install -y facter
+```
 
+sudo apt install -y facter
 ### Set up Ansible (server) on the Ubuntu > 20.04
 
 Run the following:
-
 ```
 sudo apt update
 sudo apt install software-properties-common
