@@ -1,1 +1,1 @@
-# blog.iety.xyz
+# pages.iety.xyz
