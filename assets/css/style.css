@@ -37,7 +37,7 @@ h1:first-child {
 
 h2 {
   font-size: 16px;
-  color: #333;
+  color: #BBB891;
   margin: 2em auto 1em;
 }
 
@@ -47,12 +47,12 @@ h2 {
   }
 
 h2 span.step {
-  color: #666;
+  color: #BBB891;
 }
 
 h3 {
   font-size: 14px;
-  color: #333;
+  color: #BBB891;
   margin: 1.5em 0 .5em;
 }
 
@@ -62,7 +62,7 @@ h5 {
 
 h6 {
   font-size: 13px;
-  color: #666;
+  color: #BBB891;
 }
 
 a {
@@ -91,8 +91,8 @@ blockquote {
 
 blockquote p {
     display: inline;
-    color: #ccc; 
-/*    color: #B3B3B3; */
+/*    color: #ccc; */
+    color: #B3B3B3;
     content: open-quote;
     /* font-size: 4em; */
     /* line-height: 0.1em; */
