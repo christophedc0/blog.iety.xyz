@@ -3,6 +3,7 @@ title: pages.iety.xyz
 description: No comment.
 include:
   - index.md
+  - secret.md
   - ansible.md
   - markdown.md
 plugins:
