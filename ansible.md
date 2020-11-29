@@ -134,9 +134,7 @@ example how to notify a handler after a task has been executed under `tasks` (fo
       notify: reload sshd
 ```
 
-> ⚠️ Exception !
->
-><br>
+> ### ⚠️ Exception
 >
 > You can use `flush handlers` to execute the notified handlers at a certain point, before the end of the playbook!
 >
