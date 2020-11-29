@@ -60,7 +60,7 @@ retries = 3
 - Start with `---`
 - Jinja variables should be between
 
-"{{  }}"
+"{{  }}`
 
 example:
 
