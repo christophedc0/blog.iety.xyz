@@ -81,7 +81,7 @@ notify: "{{ foo.msg }}"
 - Use `hosts` to define them
 
 ```yaml
- - hosts: <name>
+ - hosts: <name/ip/range>
  ```
 
 - Use `become` when the playbook has to be executed as superuser, you can also use this at task level (so only that task is run as superuser) or vice versa when it's set to false!
