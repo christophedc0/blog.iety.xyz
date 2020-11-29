@@ -1,12 +1,14 @@
 # Ansible 2.9.9 [DRAFT]
 
 ## Notes
+
 - Ansible is only required on the server side, there's no need to install a specific ansible package on a client (host) to get this working.
 
 ## Main settings
 
 ### Install facter on clients (you could do this when Ansible is already set up, with a playbook)
-```
+
+```bash
 sudo apt update
 sudo apt install -y facter
 ```
@@ -14,7 +16,8 @@ sudo apt install -y facter
 ### Set up Ansible (server) on the Ubuntu > 20.04
 
 Run the following:
-```
+
+```bash
 sudo apt update
 sudo apt install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
@@ -24,7 +27,8 @@ sudo apt install -y ansible
 ### My Ansible.cfg
 
 My settings:
-```
+
+```bash
 [defaults]
 # inventory file of your hosts
 inventory = /etc/ansible/hosts
@@ -54,8 +58,7 @@ retries = 3
 ## Playbook syntax
 
 1. Start with `---`
-2. Jinja variables should be between `"{{  }}"`
+2. Jinja variables should be between ```"{{  }}"```
 
-    example: `notify: "{{ foo.msg }}"`
+    example: ```notify: "{{ foo.msg }}"```
 3. Define hosts with `- hosts: <name>`
-4. 
