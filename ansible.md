@@ -60,11 +60,11 @@ retries = 3
 - Start with `---`
 - Jinja variables should be between
 
-> "{{  }}"
+`"{{  }}"`
 
 example:
 
-> notify: "{{ foo.msg }}"
+`notify: "{{ foo.msg }}"`
 
 - Use `hosts` to define them
 
