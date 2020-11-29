@@ -134,15 +134,16 @@ example how to notify a handler after a task has been executed under `tasks` (fo
       notify: reload sshd
 ```
 
-| :warning: Exception          |
-|:---------------------------|
-| You can use `flush handlers` to execute the notified handlers at a certain point, before the end of the playbook!      |
-
-example:
-
-```yaml
-    - name: Flush handlers immediately.
-      meta: flush_handlers
+> ⚠️ exception !
+>
+> You can use `flush handlers` to execute the notified handlers at a certain point, before the end of the playbook!
+>
+> example:
+>
+> ```yaml
+>    - name: Flush handlers immediately.
+>      meta: flush_handlers
+>```
 
 - Use `tasks` to execute commands.
    Each task executes a module with specific arguments, when the task is executed, the next task will be executed.
