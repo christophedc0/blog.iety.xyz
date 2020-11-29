@@ -64,11 +64,22 @@ retries = 3
 
 ```yaml
 {{ }}
+
+```
+
 {% endraw %}
 
 example:
 
-`notify: "{{ foo.msg }}"`
+{% raw %}
+
+```yaml
+notify: "{{ foo.msg }}"
+
+```
+
+{% endraw %}
+
 
 - Use `hosts` to define them
 
