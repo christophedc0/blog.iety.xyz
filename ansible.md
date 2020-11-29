@@ -64,7 +64,6 @@ retries = 3
 
 ```yaml
 {{ }}
-
 ```
 
 {% endraw %}
@@ -75,7 +74,6 @@ example:
 
 ```yaml
 notify: "{{ foo.msg }}"
-
 ```
 
 {% endraw %}
