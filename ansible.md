@@ -80,7 +80,6 @@ notify: "{{ foo.msg }}"
 
 {% endraw %}
 
-
 - Use `hosts` to define them
 
 ```yaml
