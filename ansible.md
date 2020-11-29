@@ -61,6 +61,7 @@ retries = 3
 - Jinja variables should be between
 
 > `{{  }}`
+{% {{ foo }} %}
 
 example:
 
