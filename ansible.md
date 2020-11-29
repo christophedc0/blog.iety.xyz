@@ -129,7 +129,7 @@ example how to notify a handler after a task has been executed under `tasks` (fo
 - Use `tasks` to execute commands.
    Each task executes a module with specific arguments, when the task is executed, the next task will be executed.
 
-   Tasks exist of a `name`, `module` & `arguments of the module`
+   Tasks exist of a `name`, `module` & `arguments of the module` also adding `states` is considered best practice.
 
 example:
 
@@ -137,6 +137,7 @@ example:
   tasks:
   - name: <name of the task>
     <module>:
+      state: <present/absent>
       <arg1>: argument 1
       <arg2>: argument 2
 ```
