@@ -84,7 +84,7 @@
   - hosts: <name/ip/range>
   ```
 
-- Use `become` when the playbook has to be executed as superuser, 
+- Use `become` when the playbook has to be executed as superuser,
   you can also use this at task level (so only that task is run as superuser) or vice versa when it's set to false!
 
   ```yaml
@@ -164,3 +164,16 @@
 
 - Use `register`to make something a variable.
   
+  In this example we use the shell output in a variable named "path":
+
+```yaml
+    - name: Get the value of an environment variable.
+      shell: 'echo $PATH'
+      register: path
+```
+
+Use debug to print out the variable.
+
+```yaml
+    - debug: msg="The variable is {{ path.stdout }}."
+```
