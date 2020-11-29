@@ -84,10 +84,10 @@ notify: "{{ foo.msg }}"
  - hosts: <name>
  ```
 
-- Use `become` when the playbook has to be executed as superuser, you can also use this at task level (so only that task is run as superuser)!
+- Use `become` when the playbook has to be executed as superuser, you can also use this at task level (so only that task is run as superuser) or vice versa when it's set to false!
 
 ```yaml
-  become: true
+  become: <true/false>
 ```
 
 - Use `vars_files` to add a yaml configuration containing all variables for this playbook
