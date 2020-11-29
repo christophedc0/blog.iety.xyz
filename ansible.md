@@ -2,6 +2,8 @@
 
 ## Notes
 
+This page is based on own research, people from r/homelab and especially Jeff Geerling's [Ansible for DevOps book](https://www.ansiblefordevops.com) & [YouTube livestream](http://jeffgeerling.com/blog/2020/ansible-101-jeff-geerling-youtube-streaming-series).
+
 - Ansible is only required on the server side, there's no need to install a specific ansible package on a client (host) to get this working.
 
 ## Main settings
@@ -98,17 +100,26 @@
       - vars.yml
   ```
 
+- Use `vars` to add variables directly in the playbook.
+
+  ```yaml
+    vars:
+      - key: foo
+  ```
+
 - Use `pre_tasks` to run any tasks before the main tasks
 
-  for example, updating apt if it hasn't been updated for longer than 3600 seconds (1h):
+  for example, updating the package manager if it hasn't been updated for longer than 3600 seconds (1h):
 
   ```yaml
     pre_tasks:
-      - name: Update apt cache.
-        apt:
+      - name: Update package manager cache.
+        package:
           update_cache: true
           cache_valid_time: 3600
   ```
+
+> We use package so it works on different package managers, apt, yum, ...
 
 - Use `handlers` if you need to run a task, these only run when a change has been made on a client.
   Handlers are tasks that only run at the end of the playbook when they're notified & when the client response is "changed".
@@ -176,4 +187,71 @@ Use debug to print out the variable.
 
 ```yaml
     - debug: msg="The variable is {{ path.stdout }}."
+```
+
+## Use variables for specific tasks
+
+I will use the variable "{{ ansible_os_family }}" to determine weither the package to install Apache is "httpd" (centos, redhat) or "apache2" (debian,ubuntu).
+
+In this example I also use other `vars` and `register` to be more dynamic.
+
+Playbook.yml
+
+```yaml
+---
+  - hosts: all
+    become: true
+
+    handlers:
+      - name: restart apache
+        service:
+          - name: "{{ apache_service }}"
+            state: restarted
+
+    pre_tasks:
+# I add debug to verify if the os family is correct. This is optional.
+      - debug: var=ansible_os_family
+      - name: Load variable files.
+        state: present
+        include_vars: "{{ item }}"
+        with_first_found:
+          - configs/apache_{{ ansible_os_family }}.yml
+          - configs/apache_default.yml
+
+    tasks:
+      - name: Install apache
+        package:
+          state: present
+          name: "{{ apache_service }}"
+          state: present
+        register: install_status_apache
+
+# I add debug to check what happens with the installation status message
+      - debug: var=install_status_apache['message']
+
+      - name: Copy config file
+        copy:
+          state: present
+          src: files/apache.conf
+          dest: "{{ apache_config_dir }}/apache.conf"
+        notify: restart apache
+```
+
+Apache_RedHat.yml
+
+```yaml
+---
+apache_package: httpd
+apache_service: httpd
+apache_config_dir: /etc/httpd/conf.d/
+```
+
+Apache_Ubuntu.yml
+
+```yaml
+---
+---
+apache_package: apache2
+apache_service: apache2
+apache_config_dir: /etc/apache2/sites-enabled/
 ```
