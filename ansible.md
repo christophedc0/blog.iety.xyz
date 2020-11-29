@@ -2,7 +2,7 @@
 
 ## Notes
 
-This page is based on own research, [r/homelab](http://reddit.com/r/homelab/) and especially Jeff Geerling's [Ansible for DevOps book](https://www.ansiblefordevops.com) & [YouTube livestream](http://jeffgeerling.com/blog/2020/ansible-101-jeff-geerling-youtube-streaming-series).
+This page is based on own research, [Ansible Latest Docs](https://docs.ansible.com/ansible/latest/), [r/homelab](http://reddit.com/r/homelab/) and especially Jeff Geerling's [Ansible for DevOps book](https://www.ansiblefordevops.com) & [YouTube livestream](http://jeffgeerling.com/blog/2020/ansible-101-jeff-geerling-youtube-streaming-series).
 
 - Ansible is only required on the server side, there's no need to install a specific ansible package on a client (host) to get this working.
 
