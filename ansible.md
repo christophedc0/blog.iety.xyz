@@ -62,3 +62,6 @@ retries = 3
 
     example: ```notify: "{{ foo.msg }}"```
 3. Define hosts with `- hosts: <name>`
+4. Use `become: true` when the playbook has to be executed as superuser
+5. Use ```vars_files: \n - vars.yml``` to add a yaml configuration containing all variables for this playbook
+6. 
