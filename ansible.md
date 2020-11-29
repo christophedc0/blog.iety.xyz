@@ -109,8 +109,8 @@ for example, updating apt if it hasn't been updated for longer than 3600 seconds
         cache_valid_time: 3600
 ```
 
-- Use `handlers` if you need to run a task, only when a change has been made on a client.
-   Handlers are tasks that only run when notified.
+- Use `handlers` if you need to run a task, these only run when a change has been made on a client.
+   Handlers are tasks that only run at the end of the playbook when they're notified & when the client response is "changed".
 
 for example, restart a service if a task updates the configuration of that service, but not if the configuration is unchanged
 
