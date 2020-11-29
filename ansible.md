@@ -70,7 +70,7 @@ example:
 notify: "{{ foo.msg }}"
 ```
 
-3. Use `hosts`to define them
+3. Use `hosts` to define them
 
 ```yaml
  - hosts: <name>
