@@ -67,7 +67,7 @@ retries = 3
 example:
 
 ```yaml
-`notify: "{{ foo.msg }}"
+`notify: "{{ foo.msg }}"`
 ```
 
 - Use `hosts` to define them
