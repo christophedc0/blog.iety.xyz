@@ -60,12 +60,14 @@ retries = 3
 - Start with `---`
 - Jinja variables should be between
 
-> "{{  }}"
+```yaml
+`"{{  }}"`
+```
 
 example:
 
 ```yaml
-notify: "{{ foo.msg }}"
+`notify: "\{\{ foo.msg }}"
 ```
 
 - Use `hosts` to define them
