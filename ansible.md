@@ -58,10 +58,84 @@ retries = 3
 ## Playbook syntax
 
 1. Start with `---`
-2. Jinja variables should be between ```"{{  }}"```
+2. Jinja variables should be between
 
-    example: ```notify: "{{ foo.msg }}"```
-3. Define hosts with `- hosts: <name>`
-4. Use `become: true` when the playbook has to be executed as superuser
-5. Use ```vars_files: \n - vars.yml``` to add a yaml configuration containing all variables for this playbook
-6. 
+```yaml
+"{{  }}"
+```
+
+example:
+```yaml
+notify: "{{ foo.msg }}"
+```
+
+3. Use `hosts`to define them
+
+```yaml
+ - hosts: <name>
+ ```
+
+4. Use `become` when the playbook has to be executed as superuser, you can also use this at task level (so only that task is run as superuser)!
+
+```yaml
+  become: true
+```
+
+5. Use `vars_files` to add a yaml configuration containing all variables for this playbook
+
+```yaml
+  vars_files:
+    - vars.yml
+```
+
+6. Use `pre_tasks` to run any tasks before the main tasks
+
+for example, updating apt if it hasn't been updated for longer than 3600 seconds (1h):
+
+```yaml
+  pre_tasks:
+    - name: Update apt cache.
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+```
+
+7. Use `handlers`if you need to run a task, only when a change has been made on a client.
+   Handlers are tasks that only run when notified.
+
+for example, restart a service if a task updates the configuration of that service, but not if the configuration is unchanged
+
+```yaml
+  handlers:
+    - name: reload sshd
+      service:
+        name: sshd
+        state: reloaded
+```
+
+example how to notify a handler after a task has been executed under `tasks` (for tasks, see point 8):
+
+```yaml
+    - name: Change "/etc/ssh/sshd_config" to disallow PasswordAuthentication.
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#PasswordAuthentication yes'
+        insertafter: '^#PasswordAuthentication yes'
+        line: PasswordAuthentication no
+      notify: reload sshd
+```
+
+8. Use `tasks` to execute commands.
+   Each task executes a module with specific arguments, when the task is executed, the next task will be executed.
+
+   Tasks exist of a `name`, `module` & `arguments of the module`
+
+example:
+
+```yaml
+  tasks:
+  - name: <name of the task>
+    <module>:
+      <arg1>: argument 1
+      <arg2>: argument 2
+```
