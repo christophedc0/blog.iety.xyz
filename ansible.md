@@ -60,8 +60,11 @@ retries = 3
 - Start with `---`
 - Jinja variables should be between
 
-> `{{  }}`
-`{% {{ foo }} %}`
+{% raw %}
+
+```yaml
+{{ }}
+{% endraw %}
 
 example:
 
