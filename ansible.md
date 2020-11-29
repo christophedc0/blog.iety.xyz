@@ -65,6 +65,7 @@ retries = 3
 ```
 
 example:
+
 ```yaml
 notify: "{{ foo.msg }}"
 ```
