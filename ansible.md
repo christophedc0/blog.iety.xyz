@@ -109,7 +109,9 @@ This allows us to gather more facts from the clients.
       - key: foo
   ```
 
-### Tasks
+### Roles
+
+#### Tasks
 
 - Use `pre_tasks` to run any tasks before the main tasks
 
@@ -169,7 +171,9 @@ This allows us to gather more facts from the clients.
 
 - Use `include_tasks` to import another yaml with dynamically changing tasks
 
-### Handlers
+- Use `import_playbook` to import another playbook.
+
+#### Handlers
 
 - Use `handlers` if you need to run a task, these only run when a change has been made on a client.
   Handlers are tasks that only run at the end of the playbook when they're notified & when the client response is "changed".
@@ -196,7 +200,7 @@ This allows us to gather more facts from the clients.
         notify: reload sshd
   ```
 
-  > #### ⚠️ Exception
+  > ##### ⚠️ Exception
   >
   > You can use `flush handlers` to execute the notified handlers at a certain point, before the end of the playbook!
   > <br>
@@ -207,11 +211,7 @@ This allows us to gather more facts from the clients.
   >      meta: flush_handlers
   >```
 
-## Roles
-
-<filler>
-
-## Use variables for specific tasks
+### Use variables for specific tasks
 
 I will use the variable "{{ ansible_os_family }}" to determine weither the package to install Apache is "httpd" (centos, redhat) or "apache2" (debian,ubuntu).
 
