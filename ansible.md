@@ -257,6 +257,27 @@ apache_config_dir: /etc/apache2/sites-enabled/
 ```
 ## Ansible Vault
 
+example playbook /etc/ansible/playbooks/main.yml
+
+```yaml
+---
+- hosts: localhost
+  connection: local
+  
+  vars_files:
+    - /etc/ansible/vars/api_key.yml
+  
+  tasks:
+    - name: Echo the API key which is injected in the environment.
+      shell: echo $API_KEY
+      environment:
+        API_KEY = "{{ api_key }}"
+      register: echo_result
+      
+    - name: Show the result.
+      debug: var = echo_result.stdout
+
+
 ### How to encrypt keys, passwords, sensitive data
 
 We have an API key in /etc/ansible/vars/api_key.yml
