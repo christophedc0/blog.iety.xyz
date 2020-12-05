@@ -109,9 +109,7 @@ This allows us to gather more facts from the clients.
       - key: foo
   ```
 
-### Roles
-
-#### Tasks
+### Tasks
 
 - Use `pre_tasks` to run any tasks before the main tasks
 
@@ -173,7 +171,7 @@ This allows us to gather more facts from the clients.
 
 - Use `import_playbook` to import another playbook.
 
-#### Handlers
+### Handlers
 
 - Use `handlers` if you need to run a task, these only run when a change has been made on a client.
   Handlers are tasks that only run at the end of the playbook when they're notified & when the client response is "changed".
@@ -200,7 +198,7 @@ This allows us to gather more facts from the clients.
         notify: reload sshd
   ```
 
-  > ##### ⚠️ Exception
+  > #### ⚠️ Exception
   >
   > You can use `flush handlers` to execute the notified handlers at a certain point, before the end of the playbook!
   > <br>
@@ -276,6 +274,84 @@ Apache_Ubuntu.yml
 apache_package: apache2
 apache_service: apache2
 apache_config_dir: /etc/apache2/sites-enabled/
+```
+
+### Roles
+
+Roles are used to package/group tasks, to be reused.
+
+A roles folder must contain at minimum a `meta` and `tasks` directory.
+
+1. Create /etc/ansible/roles/role1
+
+    Create a main.yml playbook and add a role in it.
+
+2. Create a `meta` directory inside of /etc/ansible/roles/role1
+
+    Create a main.yml file that contains a list of dependencies that are needed.
+
+3. Create a `tasks` directory inside of /etc/ansible/roles/role1
+
+    Create the tasks in main.yml that the role needs to execute.
+
+#### Example
+
+/etc/ansible/roles/role1/*`meta`*/main.yml
+
+(This example role doesn't have any dependencies)
+
+```yaml
+---
+dependencies: []
+```
+
+/etc/ansible/roles/role1/*`tasks`*/main.yml
+
+```yaml
+---
+- name: Copy config file
+  copy:
+    state: present
+    src: files/apache.conf
+    dest: "{{ apache_config_dir }}/apache.conf"
+  notify: restart apache
+```
+
+/etc/ansible/roles/*`role1`*/main.yml
+
+```yaml
+---
+  - hosts: all
+    become: true
+
+    handlers:
+      - name: restart apache
+        service:
+          - name: "{{ apache_service }}"
+            state: restarted
+
+    pre_tasks:
+# I add debug to verify if the os family is correct. This is optional.
+      - debug: var=ansible_os_family
+      - name: Load variable files.
+        state: present
+        include_vars: "{{ item }}"
+        with_first_found:
+          - configs/apache_{{ ansible_os_family }}.yml
+          - configs/apache_default.yml
+
+    roles:
+      - role1
+
+    tasks:
+      - name: Install apache
+        package:
+          state: present
+          name: "{{ apache_service }}"
+          state: present
+        register: install_status_apache
+
+
 ```
 
 ## Ansible Vault
