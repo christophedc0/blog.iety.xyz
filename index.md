@@ -1,1 +1,1 @@
-<center><img src="https://www.novinite.com/media/images/2013-10/photo_verybig_154277.jpg"></center>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Mr._Robot_Logo.svg/1985px-Mr._Robot_Logo.svg.png"></center>
