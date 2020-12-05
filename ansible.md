@@ -167,7 +167,7 @@ This allows us to gather more facts from the clients.
 
 - Use `import_tasks` to import another yaml with "fixed" tasks, use this as a default (if it breaks, try `include_tasks`).
 
-- Use `iclude_tasks` to import another yaml with dynamically changing tasks
+- Use `include_tasks` to import another yaml with dynamically changing tasks
 
 ### Handlers
 
