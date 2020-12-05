@@ -1,6 +1,9 @@
 <html>
 <head>
     <style>
+        body {
+            background-color: black;
+        }
         div {
           display: flex;
           justify-content: center;
