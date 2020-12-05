@@ -294,6 +294,32 @@ A roles folder must contain at minimum a `meta` and `tasks` directory.
 
     Create the tasks in main.yml that the role needs to execute.
 
+#### Usage
+
+You can use roles in three ways:
+
+- At the play level with the `roles` option: This is the *`classic way of using roles`* in a play.
+
+  Ansible executes your playbook in this order:
+
+    Any *`pre_tasks`* defined in the play.
+
+    Any *`handlers triggered by pre_tasks`*.
+
+    Each role listed in *`roles:, in the order listed`*. Any role dependencies defined in the role’s meta/main.yml run first, subject to tag filtering and conditionals. See Using role dependencies for more details.
+
+    Any *`tasks`* defined in the play.
+
+    Any *`handlers triggered by the roles or tasks`*.
+
+    Any *`post_tasks`* defined in the play.
+
+    Any *`handlers triggered by post_tasks`*.
+
+- At the tasks level with `include_role`: You can *`reuse roles dynamically anywhere in the tasks section`* of a play using include_role.
+- At the tasks level with `import_role`: You can *`reuse roles statically anywhere in the tasks section of a play`* using import_role.
+
+
 #### Example
 
 /etc/ansible/roles/role1/*`meta`*/main.yml
@@ -340,7 +366,7 @@ dependencies: []
           - configs/apache_{{ ansible_os_family }}.yml
           - configs/apache_default.yml
 
-    roles:
+    include_role:
       - role1
 
     tasks:
