@@ -15,7 +15,7 @@
 </head>
 <body>
     <div>
-        <img src='assets/images/Mr._Robot_Logo.svg.png' style='width:50%'>
+        <img src='Mr._Robot_Logo.svg.png' style='width:50%'>
     </div>
 </body>
 </html>
