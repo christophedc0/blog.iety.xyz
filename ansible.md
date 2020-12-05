@@ -10,6 +10,8 @@ This page is based on own research, [Ansible Latest Docs](https://docs.ansible.c
 
 ### Install facter on clients (you could do this when Ansible is already set up, with a playbook)
 
+This allows us to gather more facts from the clients.
+
   ```bash
   sudo apt update
   sudo apt install -y facter
