@@ -3,6 +3,7 @@
     <style>
         body {
             background-color: black;
+            overflow: hidden; /* Hide scrollbars */
         }
         div {
           display: flex;
