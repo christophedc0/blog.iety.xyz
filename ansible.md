@@ -109,6 +109,8 @@ This allows us to gather more facts from the clients.
       - key: foo
   ```
 
+### Tasks
+
 - Use `pre_tasks` to run any tasks before the main tasks
 
   for example, updating the package manager if it hasn't been updated for longer than 3600 seconds (1h):
@@ -122,42 +124,6 @@ This allows us to gather more facts from the clients.
   ```
 
 > We use package so it works on different package managers, apt, yum, ...
-
-- Use `handlers` if you need to run a task, these only run when a change has been made on a client.
-  Handlers are tasks that only run at the end of the playbook when they're notified & when the client response is "changed".
-
-  for example, restart a service if a task updates the configuration of that service, but not if the configuration is unchanged
-
-  ```yaml
-    handlers:
-      - name: reload sshd
-        service:
-          name: sshd
-          state: reloaded
-  ```
-
-  example how to notify a handler after a task has been executed under `tasks` (for tasks, see point 8):
-
-  ```yaml
-      - name: Change "/etc/ssh/sshd_config" to disallow PasswordAuthentication.
-        lineinfile:
-          path: /etc/ssh/sshd_config
-          regexp: '^#PasswordAuthentication yes'
-          insertafter: '^#PasswordAuthentication yes'
-          line: PasswordAuthentication no
-        notify: reload sshd
-  ```
-
-  > ### ⚠️ Exception
-  >
-  > You can use `flush handlers` to execute the notified handlers at a certain point, before the end of the playbook!
-  > <br>
-  > example:
-  >
-  > ```yaml
-  >    - name: Flush handlers immediately.
-  >      meta: flush_handlers
-  >```
 
 - Use `tasks` to execute commands.
     Each task executes a module with specific arguments, when the task is executed, the next task will be executed.
@@ -198,6 +164,52 @@ This allows us to gather more facts from the clients.
 - Use `ignore_errors` to true if the task could give an error, but you don't care about it and want to continue.
 
 - Use `tags` to be able to only execute that specific task from cli. Use this sparingly.
+
+- Use `import_tasks` to import another yaml with "fixed" tasks, use this as a default (if it breaks, try `include_tasks`).
+
+- Use `iclude_tasks` to import another yaml with dynamically changing tasks
+
+### Handlers
+
+- Use `handlers` if you need to run a task, these only run when a change has been made on a client.
+  Handlers are tasks that only run at the end of the playbook when they're notified & when the client response is "changed".
+
+  for example, restart a service if a task updates the configuration of that service, but not if the configuration is unchanged
+
+  ```yaml
+    handlers:
+      - name: reload sshd
+        service:
+          name: sshd
+          state: reloaded
+  ```
+
+  example how to notify a handler after a task has been executed under `tasks` (for tasks, see point 8):
+
+  ```yaml
+      - name: Change "/etc/ssh/sshd_config" to disallow PasswordAuthentication.
+        lineinfile:
+          path: /etc/ssh/sshd_config
+          regexp: '^#PasswordAuthentication yes'
+          insertafter: '^#PasswordAuthentication yes'
+          line: PasswordAuthentication no
+        notify: reload sshd
+  ```
+
+  > #### ⚠️ Exception
+  >
+  > You can use `flush handlers` to execute the notified handlers at a certain point, before the end of the playbook!
+  > <br>
+  > example:
+  >
+  > ```yaml
+  >    - name: Flush handlers immediately.
+  >      meta: flush_handlers
+  >```
+
+## Roles
+
+<filler>
 
 ## Use variables for specific tasks
 
@@ -353,5 +365,3 @@ ansible-vault rekey /etc/ansible/vars/api_key.yml
 ```
 
 Now it will ask for the password that you used for encrypting the api key file, and requires to type in a new password.
-
-
