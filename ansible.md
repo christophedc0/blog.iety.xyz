@@ -183,7 +183,7 @@ This page is based on own research, [Ansible Latest Docs](https://docs.ansible.c
       register: path
 ```
 
-Use debug to print out the variable.
+- Use `debug` to print out the variable.
 
 ```yaml
     - debug: msg="The variable is {{ path.stdout }}."
