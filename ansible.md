@@ -255,3 +255,71 @@ apache_package: apache2
 apache_service: apache2
 apache_config_dir: /etc/apache2/sites-enabled/
 ```
+## Ansible Vault
+
+### How to encrypt keys, passwords, sensitive data
+
+We have an API key in /etc/ansible/vars/api_key.yml
+which contains the following:
+
+```yaml
+---
+api_key: "AFGG2piXh0ht6dmXUxqv4nA1PU120r0yMAQhuc13i8"
+```
+
+To encrypt this:
+
+```bash
+ansible-vault encrypt /etc/ansible/vars/api_key.yml
+```
+
+This will ask for a password to encrypt it.
+Now the file is encrypted using AES256 from ansible vault.
+
+But how do we use this file now in our playbook?
+
+```bash
+ansible-playbook main.yml --ask-vault-pass
+```
+
+Now it will ask for the password that you used for encrypting the api key file.
+
+But we can supply a password file for this.
+
+```bash
+touch ~/.ansible/api_key_pass.txt
+echo "YOURPASSWORD" > ~/.ansible/api_key_pass.txt
+```
+
+Now to run the playbook:
+
+```bash
+ansible-playbook main.yml --vault-password-file ~/.ansible/api_key_pass.txt
+```
+
+### How to decrypt files
+
+```bash
+ansible-vault decrypt /etc/ansible/vars/api_key.yml
+```
+
+Now it will ask for the password that you used for encrypting the api key file.
+
+### How to edit encrypted files without decrypting it
+
+```bash
+ansible-vault edit /etc/ansible/vars/api_key.yml
+```
+
+Now it will ask for the password that you used for encrypting the api key file.
+Now you can edit the file without having to decrypt and re-encrypt it.
+
+### How to change the ecryption password
+
+```bash
+ansible-vault rekey /etc/ansible/vars/api_key.yml
+```
+
+Now it will ask for the password that you used for encrypting the api key file, and requires to type in a new password.
+
+
