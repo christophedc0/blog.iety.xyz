@@ -319,8 +319,7 @@ You can use roles in three ways:
 - At the tasks level with `include_role`: You can *`reuse roles dynamically anywhere in the tasks section`* of a play using include_role.
 - At the tasks level with `import_role`: You can *`reuse roles statically anywhere in the tasks section of a play`* using import_role.
 
-
-#### Example
+Example:
 
 /etc/ansible/roles/role1/*`meta`*/main.yml
 
@@ -366,7 +365,7 @@ dependencies: []
           - configs/apache_{{ ansible_os_family }}.yml
           - configs/apache_default.yml
 
-    include_role:
+    include_roles:
       - role1
 
     tasks:
@@ -376,8 +375,58 @@ dependencies: []
           name: "{{ apache_service }}"
           state: present
         register: install_status_apache
+```
 
+##### Including roles: dynamic reuse
 
+You can reuse roles dynamically anywhere in the tasks section of a play using include_role.
+
+While roles added in a roles section run before any other tasks in a playbook, included roles run in the order they are defined.
+
+If there are other tasks before an include_role task, the other tasks will run first.
+
+Example:
+
+```yaml
+---
+- hosts: webservers
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs before the example role"
+
+    - name: Include the example role
+      include_role:
+        name: example
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs after the example role"
+```
+
+##### Importing roles: static reuse
+
+You can reuse roles statically anywhere in the tasks section of a play using import_role.
+
+The behavior is the same as using the roles keyword.
+
+Example:
+
+```yaml
+---
+- hosts: webservers
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "before we run our role"
+
+    - name: Import the example role
+      import_role:
+        name: example
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "after we ran our role"
 ```
 
 ## Ansible Vault
