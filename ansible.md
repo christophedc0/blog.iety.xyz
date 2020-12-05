@@ -270,7 +270,6 @@ Apache_Ubuntu.yml
 
 ```yaml
 ---
----
 apache_package: apache2
 apache_service: apache2
 apache_config_dir: /etc/apache2/sites-enabled/
