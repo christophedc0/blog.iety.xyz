@@ -6,10 +6,11 @@
             padding: 0;
         }
         .imgbox {
-            display: grid;
+            display: block;
             height: 100%;
         }
         .center-fit {
+            max-height: 100vh;
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
