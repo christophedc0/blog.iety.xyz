@@ -189,6 +189,14 @@ Use debug to print out the variable.
     - debug: msg="The variable is {{ path.stdout }}."
 ```
 
+- Use `when` to decide when to run this task depending on other tasks/variables.
+
+- Use `changed_when`or `failed_when`to decide when to run this task depending on changes or fails.
+
+- Use `ignore_errors` to true if the task could give an error, but you don't care about it and want to continue.
+
+- Use `tags` to be able to only execute that specific task from cli. Use this sparingly.
+
 ## Use variables for specific tasks
 
 I will use the variable "{{ ansible_os_family }}" to determine weither the package to install Apache is "httpd" (centos, redhat) or "apache2" (debian,ubuntu).
@@ -276,9 +284,9 @@ example playbook /etc/ansible/playbooks/main.yml
       
     - name: Show the result.
       debug: var = echo_result.stdout
+```
 
-
-### How to encrypt keys, passwords, sensitive data
+### How to encrypt keys, passwords & sensitive data.
 
 We have an API key in /etc/ansible/vars/api_key.yml
 which contains the following:
@@ -318,7 +326,7 @@ Now to run the playbook:
 ansible-playbook main.yml --vault-password-file ~/.ansible/api_key_pass.txt
 ```
 
-### How to decrypt files
+### How to decrypt files.
 
 ```bash
 ansible-vault decrypt /etc/ansible/vars/api_key.yml
@@ -326,7 +334,7 @@ ansible-vault decrypt /etc/ansible/vars/api_key.yml
 
 Now it will ask for the password that you used for encrypting the api key file.
 
-### How to edit encrypted files without decrypting it
+### How to edit encrypted files without decrypting it.
 
 ```bash
 ansible-vault edit /etc/ansible/vars/api_key.yml
@@ -335,7 +343,7 @@ ansible-vault edit /etc/ansible/vars/api_key.yml
 Now it will ask for the password that you used for encrypting the api key file.
 Now you can edit the file without having to decrypt and re-encrypt it.
 
-### How to change the ecryption password
+### How to change the ecryption password.
 
 ```bash
 ansible-vault rekey /etc/ansible/vars/api_key.yml
