@@ -9,7 +9,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 393px;
+          height: 100%;
         }
     </style>
 </head>
